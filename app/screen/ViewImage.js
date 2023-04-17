@@ -1,15 +1,15 @@
-import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import React from "react";
+import { Image, StyleSheet, View } from "react-native";
 
-import colors from "../config/colors"
+import colors from "../config/colors";
 
 function ViewImage(props) {
   return (
     <View style={styles.imageContainer}>
       <View style={styles.deleteIcon}></View>
       <View style={styles.closeIcon}></View>
-      <Image 
-        resizeMode='contain'
+      <Image
+        resizeMode="contain"
         style={styles.image}
         source={require("../assets/chair.jpg")}
       />
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: "100%"
+    height: "100%",
   },
   deleteIcon: {
     width: 50,
@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
     top: 0,
     right: 30,
   },
-})
+});
 
 export default ViewImage;
