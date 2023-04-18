@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 
 import Card from "../components/Card";
-import Owner from "../components/Owner";
+import User from "../components/User";
 
 function ListingDetails(props) {
   return (
@@ -15,7 +15,7 @@ function ListingDetails(props) {
         image={require("../assets/jacket.jpg")}
       />
       <View style={styles.detailsContainer}>
-        <Owner
+        <User
           image={require("../assets/mosh.jpg")}
           title="mosh hamadani"
           subTitle="10 Listings"

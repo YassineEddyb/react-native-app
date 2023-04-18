@@ -4,7 +4,7 @@ import { Image, View, StyleSheet } from "react-native";
 import AppText from "./AppText";
 import colors from "../config/colors";
 
-function Owner({ image, title, subTitle }) {
+function User({ image, title, subTitle }) {
   return (
     <View style={styles.owner}>
       <Image style={styles.image} source={image} />
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Owner;
+export default User;

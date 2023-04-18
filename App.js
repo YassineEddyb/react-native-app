@@ -5,9 +5,10 @@ import ViewImage from "./app/screen/ViewImage";
 import AppButton from "./app/components/AppButton";
 import Card from "./app/components/Card";
 import ListingDetails from "./app/screen/ListingDetails";
+import Messages from "./app/screen/Messages";
 
 export default function App() {
-  return <ListingDetails />;
+  return <Messages />;
 }
 
 const styles = StyleSheet.create({
