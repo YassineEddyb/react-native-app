@@ -1,11 +1,30 @@
 import React from "react";
 
-import { StyleSheet } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
 
 import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
+import Separator from "../components/Separator";
+import { View } from "react-native-web";
+
+const menuItems = [
+  {
+    title: "My Listing",
+    icon: {
+      name: "format-list-bulleted",
+      backgroundColor: colors.primary,
+    },
+  },
+  {
+    title: "My Messages",
+    icon: {
+      name: "email",
+      backgroundColor: colors.secondary,
+    },
+  },
+];
 
 function Account(props) {
   return (
@@ -17,7 +36,29 @@ function Account(props) {
         image={require("../assets/mosh.jpg")}
       />
 
-      <ListItem title="message" imageComponent={<Icon name="email" />} />
+      <View style={styles.container}>
+        <FlatList
+          data={menuItems}
+          keyExtractor={(menuItem) => menuItem.title}
+          ItemSeparatorComponent={Separator}
+          renderItem={({ item }) => (
+            <ListItem
+              title={item.title}
+              imageComponent={
+                <Icon
+                  name={item.icon.name}
+                  backgroundColor={item.icon.backgroundColor}
+                />
+              }
+            />
+          )}
+        />
+      </View>
+
+      <ListItem
+        title="logout"
+        imageComponent={<Icon name="logout" backgroundColor={colors.black} />}
+      />
     </Screen>
   );
 }
@@ -27,6 +68,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrey,
   },
   profile: {
+    marginBottom: 30,
+  },
+  container: {
     marginBottom: 10,
   },
 });

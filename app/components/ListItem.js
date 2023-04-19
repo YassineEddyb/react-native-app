@@ -23,7 +23,7 @@ function ListItem({
   return (
     <Swipeable friction renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.lightGrey} onPress={onPress}>
-        <View style={[styles.owner, style]}>
+        <View style={[styles.container, style]}>
           {imageComponent}
           {image && <Image style={styles.image} source={image} />}
           <View style={styles.details}>
@@ -37,10 +37,11 @@ function ListItem({
 }
 
 const styles = StyleSheet.create({
-  owner: {
+  container: {
     padding: 10,
     flex: 1,
     flexDirection: "row",
+    backgroundColor: colors.white,
   },
   image: {
     width: 50,
