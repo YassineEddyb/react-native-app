@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { StyleSheet, Text, View, Button, Dimensions } from "react-native";
 
 import Welcome from "./app/screen/Welcome";
@@ -10,9 +11,31 @@ import Screen from "./app/components/Screen";
 import Icon from "./app/components/Icon";
 import User from "./app/components/ListItem";
 import Account from "./app/screen/Account";
+import Listings from "./app/screen/Listings";
+import AppInput from "./app/components/AppInput";
+import AppPicker from "./app/components/AppPicker";
+
+const categories = [
+  { label: "Forniture", value: 1 },
+  { label: "Clothing", value: 2 },
+  { label: "Cameras", value: 3 },
+];
 
 export default function App() {
-  return <Account />;
+  const [category, setCategory] = useState();
+
+  return (
+    <Screen>
+      <AppPicker
+        selectedItem={category}
+        onSelect={(item) => setCategory(item)}
+        items={categories}
+        icon="apps"
+        placeholder="Category"
+      />
+      <AppInput placeholder="email" icon="email" />
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
