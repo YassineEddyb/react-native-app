@@ -14,6 +14,7 @@ import Account from "./app/screen/Account";
 import Listings from "./app/screen/Listings";
 import AppInput from "./app/components/AppInput";
 import AppPicker from "./app/components/AppPicker";
+import Login from "./app/screen/Login";
 
 const categories = [
   { label: "Forniture", value: 1 },
@@ -24,18 +25,7 @@ const categories = [
 export default function App() {
   const [category, setCategory] = useState();
 
-  return (
-    <Screen>
-      <AppPicker
-        selectedItem={category}
-        onSelect={(item) => setCategory(item)}
-        items={categories}
-        icon="apps"
-        placeholder="Category"
-      />
-      <AppInput placeholder="email" icon="email" />
-    </Screen>
-  );
+  return <Login />;
 }
 
 const styles = StyleSheet.create({
