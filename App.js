@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, Button, Dimensions } from "react-native";
+import * as ImagePicker from "expo-image-picker";
 
 import Welcome from "./app/screen/Welcome";
 import ViewImage from "./app/screen/ViewImage";
@@ -15,17 +16,13 @@ import Listings from "./app/screen/Listings";
 import AppInput from "./app/components/AppInput";
 import AppPicker from "./app/components/AppPicker";
 import Login from "./app/screen/Login";
-
-const categories = [
-  { label: "Forniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Cameras", value: 3 },
-];
+import ListringEdit from "./app/screen/ListringEdit";
+import colors from "./app/config/colors";
+import ImageInput from "./app/components/ImageInput";
+import ImageInputList from "./app/components/ImageInputList";
 
 export default function App() {
-  const [category, setCategory] = useState();
-
-  return <Login />;
+  return <ListringEdit />;
 }
 
 const styles = StyleSheet.create({
