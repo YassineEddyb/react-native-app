@@ -5,7 +5,7 @@ import colors from "../config/colors";
 import AppButton from "../components/AppButton";
 import AppText from "../components/AppText";
 
-function Welcome(props) {
+function Welcome({ navigation }) {
   return (
     <ImageBackground
       style={styles.background}
@@ -17,7 +17,9 @@ function Welcome(props) {
       </View>
 
       <View style={styles.btnContainer}>
-        <AppButton>Login</AppButton>
+        <AppButton onPress={() => navigation.navigate("Login")}>
+          Login
+        </AppButton>
         <AppButton color="secondary">Register</AppButton>
       </View>
     </ImageBackground>

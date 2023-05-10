@@ -20,7 +20,7 @@ const listings = [
   },
 ];
 
-function Listings(props) {
+function Listings({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <FlatList
@@ -31,6 +31,7 @@ function Listings(props) {
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
+            onPress={() => navigation.navigate("ListingDetails", item)}
           />
         )}
         ItemSeparatorComponent={() => <View style={styles.separator} />}

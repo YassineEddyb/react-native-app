@@ -4,15 +4,17 @@ import { View, StyleSheet } from "react-native";
 import Card from "../components/Card";
 import ListItem from "../components/ListItem";
 
-function ListingDetails(props) {
+function ListingDetails({ route }) {
+  const listing = route.params;
+
   return (
     <View style={styles.listing}>
       <Card
         style={styles.card}
         imageStyle={styles.cardImage}
-        title="Red jacket for sale"
-        subTitle="$100"
-        image={require("../assets/jacket.jpg")}
+        title={listing.title}
+        subTitle={"$" + listing.price}
+        image={listing.image}
       />
       <View style={styles.detailsContainer}>
         <ListItem
